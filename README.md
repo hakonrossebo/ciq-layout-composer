@@ -10,7 +10,7 @@ I've used this as a way to learn React, Redux and Node development. I would appr
 
 ### Show and Tell
 ####*Feature Animation*
-<img src=".docs/screenshots/CIQAnimation.gif" width="750" />
+<img src="docs/screenshots/CIQAnimation.gif" width="750" />
 
 ### Based on:
 * [Garmin Connect IQ](http://developer.garmin.com/connect-iq/overview/)
