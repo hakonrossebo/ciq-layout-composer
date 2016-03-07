@@ -1,0 +1,10 @@
+.idea/
+node_modules/
+bin/
+dist/
+*.iml
+*.prg
+*.prg.debug
+webpack-assets.json
+webpack-stats.json
+npm-debug.log

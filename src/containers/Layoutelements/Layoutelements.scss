@@ -1,0 +1,31 @@
+.connectiqlayouts {
+  .typeCol {
+    width: 10%;
+  }
+  .descriptionCol {
+    width: 20%;
+  }
+  .colorCol {
+    width: 15%;
+  }
+  .displayTextCol {
+    width: 15%;
+  }
+  .positionCol {
+    width: 20%;
+  }
+  .buttonCol {
+    width: 20%;
+    :global(.btn) {
+      margin: 0 5px;
+    }
+  }
+  tr.saving {
+    opacity: 0.8;
+    :global(.btn) {
+      &[disabled] {
+        opacity: 1;
+      }
+    }
+  }
+}

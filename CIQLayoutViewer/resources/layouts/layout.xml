@@ -1,0 +1,4 @@
+<layout id="MainLayout">
+    <label id="TeamName" x="100" y="15" font="Gfx.FONT_LARGE" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_BLUE" text="asdf"/>
+
+</layout>

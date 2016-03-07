@@ -1,0 +1,412 @@
+swagger: "2.0"
+info:
+  description: |
+    This is a ConnectIQ Layouts server.
+
+  version: "1.0.0"
+  title: ConnectIQLayouts
+  contact:
+    name: Håkon Rossebø
+  license:
+    name: MIT
+host: localhost:3043
+basePath: /
+schemes:
+  - http
+paths:
+   /swagger:    
+      x-swagger-pipe: swagger_raw
+   /ConnectIQLayouts/:
+    get:
+      tags:
+        - Layout
+      summary: Finds ConnectIQLayouts for user
+      produces:
+        - application/json
+      x-swagger-router-controller: "Layout"    
+      operationId: getConnectIQLayouts
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ConnectIQLayout'
+        '400':
+          description: Invalid user or missing data
+        '404':
+          description: not found
+    post:
+      tags:
+        - Layout
+      summary: Add a new ConnectIQLayout to the store
+      description: ''
+      x-swagger-router-controller: "Layout"    
+      operationId: addConnectIQLayout
+      consumes:
+        - application/json
+      produces:
+        - application/json
+        - text/plain
+      parameters:
+        - in: body
+          name: body
+          description: ConnectIQLayout object that needs to be added to the store
+          required: true
+          schema:
+            $ref: '#/definitions/ConnectIQLayout'
+      responses:
+        '201':
+          description: Created ok
+          schema:
+            $ref: '#/definitions/ConnectIQLayout'
+        '405':
+          description: Invalid input
+    put:
+      tags:
+        - Layout
+      summary: Add a new ConnectIQLayout to the store
+      description: ''
+      x-swagger-router-controller: "Layout"    
+      operationId: updateConnectIQLayout
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: ConnectIQLayout object that needs to be added to the store
+          required: false
+          schema:
+            $ref: '#/definitions/ConnectIQLayout'
+      responses:
+        '201':
+          description: Updated ok
+          schema:
+            $ref: '#/definitions/ConnectIQLayout'
+        '405':
+          description: Invalid input
+   /ConnectIQLayouts/{connectIQLayoutId}:
+    get:
+      tags:
+        - Layout
+      summary: Finds a ConnectIQLayout by Id for user
+      x-swagger-router-controller: "Layout"    
+      operationId: getConnectIQLayoutById
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: connectIQLayoutId
+          description: ID of ConnectIQLayout that needs to be fetched
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+              $ref: '#/definitions/ConnectIQLayout'
+        '400':
+          description: Invalid or missing input
+        '404':
+          description: not found
+    delete:
+      tags:
+        - Layout
+      summary: Deletes a ConnectIQLayout by Id for user
+      x-swagger-router-controller: "Layout"    
+      operationId: deleteConnectIQLayoutById
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: connectIQLayoutId
+          description: ID of ConnectIQLayout that needs to be deleted
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+        '404':
+          description: not found
+   /ConnectIQLayouts/active:
+    get:
+      tags:
+        - Layout
+      summary: Finds ConnectIQLayouts for user
+      produces:
+        - application/json
+      x-swagger-router-controller: "Layout"    
+      operationId: getActiveConnectIQLayout
+      responses:
+        '200':
+          description: successful operation
+          schema:
+              $ref: '#/definitions/ConnectIQLayout'
+          headers:
+            ETag:
+              description: Caching header
+              type: string              
+        '400':
+          description: Invalid user or missing data
+        '404':
+          description: not found
+   /ConnectIQLayouts/{connectIQLayoutId}/setactive:
+    put:
+      tags:
+        - Layout
+      summary: Add a new ConnectIQLayout to the store
+      description: ''
+      x-swagger-router-controller: "Layout"    
+      operationId: setActiveConnectIQLayout
+      parameters:
+        - in: path
+          name: connectIQLayoutId
+          description: ID of ConnectIQLayout that needs to be deleted
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Activated ok
+        '500':
+          description: Error occured
+   '/ConnectIQLayouts/{connectIQLayoutId}/LayoutElements/':
+    get:
+      tags:
+        - LayoutElements
+      summary: Finds Layoutelements
+      x-swagger-router-controller: "LayoutElements"    
+      operationId: getLayoutElements
+      produces:
+        - application/json
+        - application/xml
+      parameters:
+        - in: path
+          name: connectIQLayoutId
+          description: ID of connectIQLayoutId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/LayoutElement'
+        '400':
+          description: Invalid or missing data
+        '404':
+          description: not found
+    post:
+      tags:
+        - LayoutElements
+      summary: Add a new LayoutElement to the store
+      description: ''
+      x-swagger-router-controller: "LayoutElements"    
+      operationId: addLayoutElement
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: LayoutElement object that needs to be added to the store
+          required: true
+          schema:
+            $ref: '#/definitions/LayoutElement'
+        - in: path
+          name: connectIQLayoutId
+          description: ID of connectIQLayoutId
+          required: true
+          type: string
+      responses:
+        '405':
+          description: Invalid input
+   '/ConnectIQLayouts/{connectIQLayoutId}/LayoutElements/{layoutElementsId}':
+    get:
+      tags:
+        - LayoutElements
+      summary: Finds a Layoutelement by id
+      x-swagger-router-controller: "LayoutElements"    
+      operationId: getLayoutElement
+      produces:
+        - application/json
+        - application/xml
+      parameters:
+        - in: path
+          name: connectIQLayoutId
+          description: ID of connectIQLayoutId
+          required: true
+          type: string
+        - in: path
+          name: layoutElementsId
+          description: ID of layoutElement
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+              $ref: '#/definitions/LayoutElement'
+        '400':
+          description: Invalid or missing data
+        '404':
+          description: not found
+    put:
+      tags:
+        - LayoutElements
+      summary: Update a Layoutelement 
+      x-swagger-router-controller: "LayoutElements"    
+      operationId: updateLayoutElement
+      produces:
+        - application/json
+        - application/xml
+      parameters:
+        - in: path
+          name: connectIQLayoutId
+          description: ID of connectIQLayoutId
+          required: true
+          type: string
+        - in: path
+          name: layoutElementsId
+          description: ID of layoutElement
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Layout element to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/LayoutElement'
+      responses:
+        '201':
+          description: Updated ok
+          schema:
+              $ref: '#/definitions/LayoutElement'
+        '400':
+          description: Invalid or missing data
+        '404':
+          description: not found
+    delete:
+      tags:
+        - LayoutElements
+      summary: Delete a Layoutelement 
+      x-swagger-router-controller: "LayoutElements"    
+      operationId: deleteLayoutElement
+      produces:
+        - application/json
+        - application/xml
+      parameters:
+        - in: path
+          name: connectIQLayoutId
+          description: ID of connectIQLayoutId
+          required: true
+          type: string
+        - in: path
+          name: layoutElementsId
+          description: ID of layoutElement
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+        '404':
+          description: not found
+definitions:
+  Coordinate:
+    type: object
+    properties:
+      xpos:
+        type: integer
+        format: int64
+      ypos:
+        type: integer
+        format: int64
+      xposCenter:
+        type: boolean
+      yposCenter:
+        type: boolean
+  ConnectIQLayout:
+    type: object
+    required:
+      - name
+    properties:
+      _id:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      lastUpdatedDate:
+        type: string
+        format: date-time
+      useAsDefault:
+        type: boolean
+      elements:
+        type: array
+        items:
+          $ref: '#/definitions/LayoutElement'
+  LayoutElement:
+    type: object
+    required:
+      - elementtype
+    properties:
+      _id:
+        type: string
+      connecticlayout_ref:
+        type: string
+      elementtype:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      displayText:
+        type: string
+      zindex:
+        type: integer
+        format: int64
+      text:
+        type: string
+      font:
+        type: string
+      color:
+        type: string
+      justification:
+        type: string
+      arcType:
+        type: string
+      lineWidth:
+        type: integer
+        format: int64
+      coordinates:
+        type: array
+        items:
+          $ref: '#/definitions/Coordinate'
+      visible:
+        type: boolean
+      filled:
+        type: boolean
+      xRadius:
+        type: integer
+        format: int64
+      yRadius:
+        type: integer
+        format: int64
+      rectangleWidth:
+        type: integer
+        format: int64
+      rectangleHeight:
+        type: integer
+        format: int64
+      degreeStart:
+        type: integer
+        format: int64
+      degreeEnd:
+        type: integer
+        format: int64
+      lastUpdatedDate:
+        type: string
+        format: date-time

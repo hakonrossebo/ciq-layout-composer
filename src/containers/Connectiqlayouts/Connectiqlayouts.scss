@@ -1,0 +1,25 @@
+.connectiqlayouts {
+  .refreshBtn {
+    margin-left: 20px;
+  }
+  .nameCol {
+    width: 30%;
+  }
+  .descriptionCol {
+    width: 40%;
+  }
+  .buttonCol {
+    width: 30%;
+    :global(.btn) {
+      margin: 0 5px;
+    }
+  }
+  tr.saving {
+    opacity: 0.8;
+    :global(.btn) {
+      &[disabled] {
+        opacity: 1;
+      }
+    }
+  }
+}

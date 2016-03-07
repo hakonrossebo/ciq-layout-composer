@@ -1,0 +1,20 @@
+{
+  "name": "CIQ-Layout-composer",
+  "description": "Visual tools to edit and view layout changes on the fly",
+  "repository": "https://github.com/hakonrossebo/ciq-layout-composer",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": [
+    "garmin connect iq",
+    "react",
+    "isomorphic",
+    "universal",
+    "webpack",
+    "express",
+    "hot reloading",
+    "react-hot-reloader",
+    "redux",
+    "starter",
+    "boilerplate",
+    "babel"
+  ]
+}
