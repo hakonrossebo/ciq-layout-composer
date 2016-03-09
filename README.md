@@ -2,7 +2,12 @@
 
 ## About
 
-This is a specific tool I've created to assist Garmin Connect IQ developers when creating user interfaces (views). This tool enables developers to create a user interface in an editor while previewing the end result in the simulator app.
+This is a specific tool I've created to assist Garmin Connect IQ developers when creating user interfaces (views). This tool enables developers to create a user interface in an editor while previewing the end result in the simulator app. When finished the app can generate Connect IQ View code that can be copied into a view.
+
+###Features
+* Create drawable elements in the editor
+* Show the end-result in the simulator while editing
+* Generate code to include in your own app
 
 While this tool is fully usable now, the intention is to be able to deploy this to a web server, making it far more accessible to all Connect IC developers.
 
