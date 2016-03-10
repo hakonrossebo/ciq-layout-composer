@@ -3,7 +3,7 @@
   "description": "Visual tools to edit and view layout changes on the fly",
   "author": "Håkon Rossebø <hakonrossebo@hotmail.com> (http://github.com/hakonrossebo)",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/hakonrossebo/ciq-layout-composer"
@@ -19,9 +19,8 @@
     "hot reloading",
     "react-hot-reloader",
     "redux",
-    "starter",
-    "boilerplate",
-    "babel"
+    "babel",
+    "docker"
   ],
   "main": "bin/server.js",
   "scripts": {
