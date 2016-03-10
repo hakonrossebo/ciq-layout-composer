@@ -98,6 +98,12 @@ open your browser to http://localhost:8080
 This Faq will contain more information at a later stage
 Check issues or create an issue for any unresolved issues.
 
+## Version history
+
+* 0.1.2 Added/Enabled Docker containers
+* 0.1.1 Fixed to run production scripts
+* 0.1.0 Initial version
+
 ## Roadmap
 
 There are many things that I had to omit in the first release:
