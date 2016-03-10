@@ -33,7 +33,7 @@ export default class ConnectiqlayoutsForm extends Component {
   render() {
     const { editStop, fields: {description, name}, formKey, handleSubmit, invalid,
       pristine, save, submitting, saveError: { [formKey]: saveError }, values } = this.props;
-    const styles = require('containers/connectiqlayouts/connectiqlayouts.scss');
+    const styles = require('containers/Connectiqlayouts/Connectiqlayouts.scss');
     return (
       <tr className={submitting ? styles.saving : ''}>
         <td className={styles.nameCol}>

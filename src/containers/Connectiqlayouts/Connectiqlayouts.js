@@ -67,7 +67,7 @@ export default class Connectiqlayouts extends Component {
     const tooltip = (
       <Tooltip id="activatetooltip">By activating this layout, the viewer app will display elements from this layout</Tooltip>
     );
-    const styles = require('./connectiqlayouts.scss');
+    const styles = require('./Connectiqlayouts.scss');
     return (
       <div className={styles.connectiqlayouts + ' container'}>
         <h1>

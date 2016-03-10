@@ -32,7 +32,7 @@ export default class ConnectiqlayoutsForm extends Component {
   render() {
     const { addStop, fields: {name, description}, handleSubmit, invalid,
       pristine, additem, submitting, addError: addError, values} = this.props;
-    const styles = require('containers/connectiqlayouts/connectiqlayouts.scss');
+    const styles = require('containers/Connectiqlayouts/Connectiqlayouts.scss');
     return (
       <table>
         <tbody>
