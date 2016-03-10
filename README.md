@@ -39,32 +39,37 @@ I've used this as a way to learn React, Redux and Node development. I would appr
 * MongoDB
 
 ## Installation
-
 ```bash
 npm install
 ```
 
-## Running API and Dev Server
-
-###### 1) Run API
+## Running Dev Server
 ```bash
 (Make sure MongoDB is installed and running)
 (run this is a separate terminal)
-(navigate to the CIQLayoutsAPI folder)
 
->swagger project start
-```
-###### 1) Run dev server
-```bash
 >npm run dev
 open your browser to http://localhost:3040
 ```
+
 ## Running the Connect IQ Simulator App
 With Eclipse and the Connect IQ SDK:
 ```bash
 Open and run the CIQLayoutViewer project
 Make sure to "activate" the current layout in the editor
 ```
+
+## Running production Server
+NB - This is not needed for testing/development
+```bash
+(Make sure MongoDB is installed and running)
+(run this is a separate terminal)
+
+>npm run build
+>npm run start
+open your browser to http://localhost:8080
+```
+
 
 ## Documentation
 
