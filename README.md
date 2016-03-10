@@ -9,7 +9,7 @@ This is a specific tool I've created to assist Garmin Connect IQ developers when
 * Show the end-result in the simulator while editing
 * Generate code to include in your own app
 
-While this tool is fully usable now, the intention is to be able to deploy this to a web server, making it far more accessible to all Connect IC developers.
+While this tool is fully usable now, the intention is to be able to deploy this to a web server, making it far more accessible to all Connect IC developers. Running in Docker should be a simple alternative to get started.
 
 I've used this as a way to learn React, Redux and Node development. I would appreciate feedback on ways to improve this codebase.
 
@@ -43,6 +43,9 @@ I've used this as a way to learn React, Redux and Node development. I would appr
 npm install
 ```
 
+## Running the App
+It is possible to run this as a full development image, but also in separate docker containers. See descriptions below for alternatives.
+
 ## Running Dev Server
 ```bash
 (Make sure MongoDB is installed and running)
@@ -59,7 +62,20 @@ Open and run the CIQLayoutViewer project
 Make sure to "activate" the current layout in the editor
 ```
 
-## Running production Server
+## Running in Docker
+This project has been set up to run in Docker containers. Docker Compose has been set up to run MongoDB, API and WEB as separate docker machines.
+```bash
+..Set up docker on your system (windows/mac/linux)
+
+>docker-compose build
+>docker-compose up
+
+>docker-machine ls to determine the ip adress
+open your browser to http://<ip address from docker-machine>:8080
+NB - you also need to point the Connect IQ Viewer application to this ip address.
+```
+
+## Alternative - Running production Server
 NB - This is not needed for testing/development
 ```bash
 (Make sure MongoDB is installed and running)

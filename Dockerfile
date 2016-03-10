@@ -36,10 +36,10 @@ ADD . .
 RUN npm run build # Build (using webpack) assets
 
 # Expose API ports
-EXPOSE 3041
+# EXPOSE 3041
 
 # Expose SERVER ports
 EXPOSE 8080
 
 # Specify default CMD
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "start-prod"]

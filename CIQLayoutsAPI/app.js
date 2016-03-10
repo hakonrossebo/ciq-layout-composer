@@ -6,17 +6,16 @@ var app = require('express')();
 var mongoose   = require('mongoose');
 
 
-module.exports = app; 
-mongoose.connect('mongodb://localhost/ciq'); 
-
+module.exports = app;
+mongoose.connect(process.env.MONGO_DB_URL || 'mongodb://localhost/ciq');
 var config = {
 appRoot: __dirname // required config
 };
 
 SwaggerExpress.create(config, function(err, swaggerExpress) {
     if (err) {
-        console.log(err); 
-        throw err; 
+        console.log(err);
+        throw err;
     }
 
     // install middleware

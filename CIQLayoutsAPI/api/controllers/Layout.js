@@ -23,11 +23,11 @@ module.exports.updateConnectIQLayout = function updateConnectIQLayout (req, res,
         if (err)
             res.send(err);
 
-        updateItem.name = body.name;  
+        updateItem.name = body.name;
         updateItem.description = body.description;
-        updateItem.lastUpdatedDate = new Date();  
+        updateItem.lastUpdatedDate = new Date();
 
-        // save 
+        // save
         updateItem.save(function(err) {
             if (err) {
                 console.log('db error');
@@ -94,10 +94,10 @@ module.exports.setActiveConnectIQLayout = function setActiveConnectIQLayout (req
         if (err)
             res.send(err);
 
-        updateItem.useAsDefault = true;  
-        updateItem.lastUpdatedDate = new Date();  
+        updateItem.useAsDefault = true;
+        updateItem.lastUpdatedDate = new Date();
 
-        // save 
+        // save
         updateItem.save(function(err) {
             if (err) {
                 console.log('db error');
@@ -117,7 +117,7 @@ module.exports.getActiveConnectIQLayout = function getActiveConnectIQLayout (req
     if (typeof (reqIfModifiedSince) !== 'undefined') {
         query = { useAsDefault: true, lastUpdatedDate:{ $gt:(reqIfModifiedSince)}};
     }
-    
+
 	LayoutModel.findOne(query,function(err, result) {
 		if (err) {
 			console.log('db error');

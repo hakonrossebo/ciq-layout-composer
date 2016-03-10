@@ -1,0 +1,25 @@
+mongo:
+  build: .
+  dockerfile: CIQLayoutsAPI/mongo/Dockerfile
+  ports:
+    - "27017:27017"
+
+api:
+  build: ./CIQLayoutsAPI
+  dockerfile: Dockerfile
+  links:
+    - mongo:mongo
+  environment:
+    - MONGO_DB_URL=mongodb://mongo:27017/ciq
+  ports:
+    - "3043:3043"
+
+web:
+  build: .
+  dockerfile: Dockerfile
+  links:
+    - api:api
+  environment:
+    - DOCKER_API_ENV=api
+  ports:
+    - "8080:8080"
