@@ -1,4 +1,6 @@
 # CIQ Layout Composer
+[![Stories in Ready](https://badge.waffle.io/hakonrossebo/ciq-layout-composer.svg?label=ready&title=Ready)](http://waffle.io/hakonrossebo/ciq-layout-composer)
+
 
 ## About
 
@@ -118,6 +120,9 @@ There are many things that I had to omit in the first release:
 * Input validation
 
 ## Contributing
+Using Waffle.io to handle backlog/issues:
+
+[![Stories in Ready](https://badge.waffle.io/hakonrossebo/ciq-layout-composer.svg?label=ready&title=Ready)](http://waffle.io/hakonrossebo/ciq-layout-composer)
 
 I am more than happy to accept external contributions to the project in the form of feedback, bug reports and pull requests.
 
